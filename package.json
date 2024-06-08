@@ -1,0 +1,17 @@
+{
+    "name": "p3s3_jesus_rojas_30160347",
+    "version": "1.0.0",
+    "description": "Proyecto para Programación 3",
+    "main": "src/app.js",
+    "type": "module",
+    "scripts": {
+        "dev": "nodemon src/app.js"
+    },
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+        "express": "^4.19.2",
+        "nodemon": "^3.1.1",
+        "pug": "^3.0.3"
+    }
+}
