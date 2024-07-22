@@ -1,0 +1,34 @@
+extends ./layout/index
+
+block contenido
+    .container
+
+        .container.mt-4
+            
+            form.p-4.border.rounded(action="/categories/create", method="post")
+                h3.text-center Crear Categoria
+                label.form-label(for="categorieName") Nombre de la categoria
+                input.form-control(type="text", id="categorieName", name="name", placeholder="Nombre de la categoria. Ej: 'Televisor'")
+
+                .d-flex.mt-4.justify-content-end.gap-2
+                    button.btn.btn-outline-secondary Limpiar
+                    button.btn.btn-primary Enviar
+
+            //- Tabla de las categoria
+            .mt-4.mb-4
+                if data.length > 0
+                    h3.text-center Listado de categorias
+                    table.table
+                        tr
+                            th Nombre
+                            th Acciones
+                        each item in data
+                            tr(data-categorie=item.id)
+                                td=item.name
+                                td.d-flex.justify-content-end.gap-2
+                                    button.btn.btn-primary(id="edit") Editar 
+                                    button.btn.btn-warning(id="delete") Eliminar 
+                else
+                    .mt-4.alert.alert-warning No hay categorias, cree una categoria
+
+    script(src="/js/categories.js") 
