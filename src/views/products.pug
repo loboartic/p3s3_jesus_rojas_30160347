@@ -5,9 +5,9 @@ block contenido
 
         .container.mt-4
             
-            form.p-4.border.rounded(action="/categories/create", method="post")
-                h3.text-center Crear Categoria
-                label.form-label(for="categorieName") Nombre de la categoria
+            form.p-4.border.rounded(action="/products/create", method="post")
+                h3.text-center Crear Producto
+                label.form-label(for="categorieName") Nombre del producto
                 input.form-control(type="text", id="categorieName", name="name", placeholder="Nombre de la categoria. Ej: 'Televisor'")
 
                 .d-flex.mt-4.justify-content-end.gap-2
@@ -16,8 +16,8 @@ block contenido
 
             //- Tabla de las categoria
             .mt-4.mb-4
-                if data.length > 0
-                    h3.text-center Listado de categorias
+                if data
+                    h3.text-center Listado de productos
                     table.table
                         tr
                             th Nombre
@@ -30,6 +30,6 @@ block contenido
                                     button.btn.btn-outline-primary(id="edit") Editar 
                                     button.btn.btn-warning(id="delete") Eliminar 
                 else
-                    .mt-4.alert.alert-warning No hay categorias, cree una categoria
+                    .mt-4.alert.alert-warning No hay productos registrados
 
-    script(src="/js/categories.js") 
+    //- script(src="/js/categories.js") 

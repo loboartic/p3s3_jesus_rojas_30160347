@@ -41,7 +41,24 @@ export const categorieCreate = (req, res) => {
     res.redirect('/categories');
 };
 export const categorieUpdate = (req, res) => {
-    console.log('LLego algo');
+    try {
+        const { id, newName } = req.body;
+        // Llamamos la conexion a la base datos
+        const db = crearDB();
+
+        if (!newName) {
+            res.json({ isEdit: false });
+            return;
+        }
+
+        // Actualizamos los registros
+        db.run('UPDATE categories SET name = ? WHERE id = ?', [newName, id]);
+
+        // Retornamos la respuesta
+        res.json({ isEdit: true });
+    } catch (error) {
+        res.json({ isEdit: false });
+    }
 };
 export const categorieDelete = (req, res) => {
     try {

@@ -11,10 +11,9 @@ export const crearDB = () => {
     return db;
 };
 
-
 export const conectarDB = () => {
-    return crearDB()
-}
+    return crearDB();
+};
 
 // Creamos la columnas
 export const crearColumnas = (db) => {
@@ -33,10 +32,10 @@ export const crearColumnas = (db) => {
                 } else if (!row) {
                     // La tabla no existe, crearla
                     db.run(
-                        'CREATE TABLE categories (id INTEGER PRIMARY KEY, name TEXT)'
+                        'CREATE TABLE categories (id INTEGER PRIMARY KEY, name TEXT)',
                     );
                 }
-            }
+            },
         );
 
         // Verificar si la tabla usuarios existe, si no existe crearla
@@ -51,7 +50,7 @@ export const crearColumnas = (db) => {
             CREATE TABLE productos (
             id INTEGER PRIMARY KEY,
             codigo TEXT,
-            productos TEXT,
+            name TEXT,
             categoria_id INTEGER,
             existencia_actual INTEGER,
             precio REAL,
@@ -59,7 +58,7 @@ export const crearColumnas = (db) => {
           );
           `);
                 }
-            }
+            },
         );
 
         // Retornamos la conexión
