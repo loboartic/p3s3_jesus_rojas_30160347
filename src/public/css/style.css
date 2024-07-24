@@ -1,0 +1,9 @@
+.background-store {
+    background: rgb(0, 255, 86);
+    background: linear-gradient(
+        132deg,
+        rgba(0, 255, 86, 1) 0%,
+        rgba(0, 212, 255, 1) 56%,
+        rgba(0, 103, 233, 1) 100%
+    );
+}

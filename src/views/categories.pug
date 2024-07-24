@@ -5,7 +5,7 @@ block contenido
 
         .container.mt-4
             
-            form.p-4.border.rounded(action="/categories/create", method="post")
+            form.p-4.shadow.rounded.bg-white(action="/categories/create", method="post")
                 h3.text-center Crear Categoria
                 label.form-label(for="categorieName") Nombre de la categoria
                 input.form-control(type="text", id="categorieName", name="name", placeholder="Nombre de la categoria. Ej: 'Televisor'")
@@ -17,18 +17,19 @@ block contenido
             //- Tabla de las categoria
             .mt-4.mb-4
                 if data.length > 0
-                    h3.text-center Listado de categorias
-                    table.table
-                        tr
-                            th Nombre
-                            th Acciones
-                        each item in data
-                            tr(data-categorie=item.id)
-                                td=item.name
-                                td.d-flex.justify-content-end.gap-2
-                                    button.btn.btn-primary.d-none(id="save") Guardar 
-                                    button.btn.btn-outline-primary(id="edit") Editar 
-                                    button.btn.btn-warning(id="delete") Eliminar 
+                    .container.shadow.rounded.bg-white.py-4
+                        h3.text-center Listado de categorias
+                        table.table
+                            tr
+                                th Nombre
+                                th Acciones
+                            each item in data
+                                tr(data-categorie=item.id)
+                                    td=item.name
+                                    td.d-flex.justify-content-end.gap-2
+                                        button.btn.btn-primary.d-none(id="save") Guardar 
+                                        button.btn.btn-outline-primary(id="edit") Editar 
+                                        button.btn.btn-warning(id="delete") Eliminar 
                 else
                     .mt-4.alert.alert-warning No hay categorias, cree una categoria
 
