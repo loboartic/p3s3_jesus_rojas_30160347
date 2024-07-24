@@ -7,8 +7,22 @@ block contenido
             
             form.p-4.border.rounded(action="/products/create", method="post")
                 h3.text-center Crear Producto
-                label.form-label(for="categorieName") Nombre del producto
-                input.form-control(type="text", id="categorieName", name="name", placeholder="Nombre de la categoria. Ej: 'Televisor'")
+
+                label.form-label(for="name") Nombre del producto
+                input.form-control(type="text", id="name", name="name", placeholder="Ej: 'Televisor Sansung 44pulgadas'")
+
+                label.form-label(for="code") Código del producto
+                input.form-control(type="text", id="code", name="code", placeholder="Código que lleva el producto en el almacen")
+
+                label.form-label(for="categorie") Categoria
+                input.form-control(type="text", id="categorie", name="categorie", placeholder="Categoria que ocupa el producto")
+
+                label.form-label(for="stock") Existencia en el almacen
+                input.form-control(type="text", id="stock", name="stock", placeholder="Cantidad del producto que estara en el almacen")
+
+                label.form-label(for="price") Precio Unitario
+                input.form-control(type="text", id="price", name="price", placeholder="Precio unitario del producto")
+
 
                 .d-flex.mt-4.justify-content-end.gap-2
                     button.btn.btn-outline-secondary Limpiar

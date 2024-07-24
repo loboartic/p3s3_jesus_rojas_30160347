@@ -40,21 +40,21 @@ export const crearColumnas = (db) => {
 
         // Verificar si la tabla usuarios existe, si no existe crearla
         db.get(
-            `SELECT name FROM sqlite_master WHERE type='table' AND name='productos'`,
+            `SELECT name FROM sqlite_master WHERE type='table' AND name='products'`,
             (err, row) => {
                 if (err) {
                     console.error(err);
                 } else if (!row) {
                     // La tabla no existe, crearla
                     db.run(`
-            CREATE TABLE productos (
+            CREATE TABLE products (
             id INTEGER PRIMARY KEY,
-            codigo TEXT,
             name TEXT,
-            categoria_id INTEGER,
-            existencia_actual INTEGER,
-            precio REAL,
-            FOREIGN KEY (categoria_id) REFERENCES categories(id)
+            code TEXT,
+            categorie_id INTEGER,
+            stock INTEGER,
+            price REAL,
+            FOREIGN KEY (categorie_id) REFERENCES categories(id)
           );
           `);
                 }
